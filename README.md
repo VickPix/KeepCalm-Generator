@@ -5,7 +5,22 @@ A simple php class using GD library to make simple KeepCalm style images.
 
 Simply use a '*' after a word if you want a new line.
 
-###Usage examples
+###Basic usage examples
+
+Create a new KeepCalm image:
+```php
+$kc = new KeepCalm("your text*here!");
+```
+
+Export image as a png file:
+```php
+$kc->save();
+```
+
+Return image as stream (for example in a web page):
+```php
+$kc->show();
+```
 
 #### Save file in the same directory of the script:
 ```php
