@@ -1,0 +1,6 @@
+{
+  "name": "Keepcalm-generator",
+  "tagline": "",
+  "body": "KeepCalm Generator\r\n==================\r\n\r\nA simple php class using GD library to make simple KeepCalm style images.\r\n\r\nSimply use a '*' after a word if you want a new line.\r\n\r\n###Basic usage examples\r\n\r\nCreate a new KeepCalm image:\r\n```php\r\n$kc = new KeepCalm(\"your text*here!\");\r\n```\r\n\r\nExport image as a png file:\r\n```php\r\n$kc->save();\r\n```\r\n\r\nReturn image as stream (for example in a web page):\r\n```php\r\n$kc->show();\r\n```\r\n\r\n#### Save file in the same directory of the script:\r\n```php\r\n<?php\r\n// Require the class with the correct path\r\nrequire('keepcalm.class.php');\r\n\r\n// Initialize\r\n$kc = new KeepCalm(\"hello*world!\");\r\n// Output in a file\r\n$kc->save();\r\n\r\n```\r\n\r\nExample output:\r\n\r\n![hello world](examples/helloworld.png)\r\n\r\n***\r\n\r\n#### Embed image directly to your html output:\r\n```php\r\n<?php\r\n// Require the class with the correct path\r\nrequire('keepcalm.class.php');\r\n\r\necho \"Hey you!\\n\";\r\n\r\n// Initialize\r\n$kc = new KeepCalm(\"have a*nice day\");\r\n// Output in the page\r\n$kc->show();\r\n\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

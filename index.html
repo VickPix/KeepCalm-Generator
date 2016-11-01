@@ -1,13 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Test Page</title>
-	<!--<link rel="stylesheet" href="css/spectre.min.css" />
-	<link rel="stylesheet" href="css/style.css" />-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-</head>
-<body>
-<h1>Test</h1>
-</body>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Keepcalm-generator : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Keepcalm-generator</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/VickPix/KeepCalm-Generator">View on GitHub</a>
+
+          <h1 id="project_title">Keepcalm-generator</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/VickPix/KeepCalm-Generator/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/VickPix/KeepCalm-Generator/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="keepcalm-generator" class="anchor" href="#keepcalm-generator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>KeepCalm Generator</h1>
+
+<p>A simple php class using GD library to make simple KeepCalm style images.</p>
+
+<p>Simply use a '*' after a word if you want a new line.</p>
+
+<h3>
+<a id="basic-usage-examples" class="anchor" href="#basic-usage-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic usage examples</h3>
+
+<p>Create a new KeepCalm image:</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$kc</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">KeepCalm</span>(<span class="pl-s"><span class="pl-pds">"</span>your text*here!<span class="pl-pds">"</span></span>);</span></pre></div>
+
+<p>Export image as a png file:</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$kc</span><span class="pl-k">-&gt;</span>save();</span></pre></div>
+
+<p>Return image as stream (for example in a web page):</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$kc</span><span class="pl-k">-&gt;</span>show();</span></pre></div>
+
+<h4>
+<a id="save-file-in-the-same-directory-of-the-script" class="anchor" href="#save-file-in-the-same-directory-of-the-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Save file in the same directory of the script:</h4>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Require the class with the correct path</span></span>
+<span class="pl-s1"><span class="pl-k">require</span>(<span class="pl-s"><span class="pl-pds">'</span>keepcalm.class.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Initialize</span></span>
+<span class="pl-s1"><span class="pl-smi">$kc</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">KeepCalm</span>(<span class="pl-s"><span class="pl-pds">"</span>hello*world!<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1"><span class="pl-c">// Output in a file</span></span>
+<span class="pl-s1"><span class="pl-smi">$kc</span><span class="pl-k">-&gt;</span>save();</span>
+<span class="pl-s1"></span></pre></div>
+
+<p>Example output:</p>
+
+<p><img src="examples/helloworld.png" alt="hello world"></p>
+
+<hr>
+
+<h4>
+<a id="embed-image-directly-to-your-html-output" class="anchor" href="#embed-image-directly-to-your-html-output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Embed image directly to your html output:</h4>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Require the class with the correct path</span></span>
+<span class="pl-s1"><span class="pl-k">require</span>(<span class="pl-s"><span class="pl-pds">'</span>keepcalm.class.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Hey you!<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Initialize</span></span>
+<span class="pl-s1"><span class="pl-smi">$kc</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">KeepCalm</span>(<span class="pl-s"><span class="pl-pds">"</span>have a*nice day<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1"><span class="pl-c">// Output in the page</span></span>
+<span class="pl-s1"><span class="pl-smi">$kc</span><span class="pl-k">-&gt;</span>show();</span>
+<span class="pl-s1"></span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Keepcalm-generator maintained by <a href="https://github.com/VickPix">VickPix</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
